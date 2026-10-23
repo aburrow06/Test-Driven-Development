@@ -40,6 +40,10 @@ describe("calculateTotalCosts", () => {
   test("calculates total for a standard rate and duration", () => {
     expect(calculateTotalCosts(20, 2)).toBe(40);
   });
+  
+  test("returns zero when the hourly rate is negative", () => {
+  expect(calculateTotalCosts(-10, 2)).toBe(0);
+});
 
   test("supports free sessions and zero hours", () => {
     expect(calculateTotalCosts(0, 3)).toBe(0);
