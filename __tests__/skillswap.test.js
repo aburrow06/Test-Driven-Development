@@ -19,6 +19,10 @@ describe("filterSkillsByCategory", () => {
     ]);
   });
 
+  test("returns all skills when category is missing", () => {
+  expect(filterSkillsByCategory(skills, "")).toEqual(skills);
+});
+
   test('returns all skills when category is "All"', () => {
     expect(filterSkillsByCategory(skills, "All")).toEqual(skills);
   });
