@@ -1,0 +1,12 @@
+{
+  "name": "skillswap-unit8",
+  "version": "1.0.0",
+  "description": "SkillSwap homepage with Jest tests and testable skill functions",
+  "main": "skillswap-functions.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^30.2.0"
+  }
+}

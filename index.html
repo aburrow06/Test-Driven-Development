@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Find a skill to learn or share a skill with your community.">
+  <title>SkillSwap | Learn Together</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="skillswap-functions.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="SkillSwap home">SkillSwap<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#home">Home</a>
+      <a href="#browse">Browse Skills</a>
+      <a href="#calculator">Cost Calculator</a>
+      <a href="#matcher">Find My Match</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow">LEARN SOMETHING. SHARE SOMETHING.</p>
+        <h1>Your next skill starts with a <span>swap.</span></h1>
+        <p>Connect with people in your community, learn something new, and share what you know.</p>
+        <a class="primary-button" href="#browse">Explore skills</a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="art-circle">↗</div>
+        <div class="art-card card-one">💻 <strong>Code together</strong></div>
+        <div class="art-card card-two">🎸 <strong>Make some music</strong></div>
+        <div class="art-card card-three">✍️ <strong>Build your future</strong></div>
+      </div>
+    </section>
+
+    <section class="section" id="browse">
+      <div class="section-heading">
+        <div><p class="eyebrow">THE COMMUNITY</p><h2>Browse available skills</h2></div>
+        <p>Choose a category to find your next learning opportunity.</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter skills by category">
+        <button class="filter-button active" data-category="All" aria-pressed="true">All</button>
+        <button class="filter-button" data-category="Programming" aria-pressed="false">Programming</button>
+        <button class="filter-button" data-category="Music" aria-pressed="false">Music</button>
+        <button class="filter-button" data-category="Career" aria-pressed="false">Career</button>
+      </div>
+      <div id="skill-list" class="skill-grid" aria-live="polite"></div>
+      <p id="filter-message" class="status-message" aria-live="polite"></p>
+    </section>
+
+    <section class="section tinted" id="calculator">
+      <div class="section-heading">
+        <div><p class="eyebrow">PLAN A SESSION</p><h2>Cost calculator</h2></div>
+        <p>Estimate the total cost before you book a session.</p>
+      </div>
+      <form id="cost-form" class="tool-panel">
+        <label>Hourly rate ($)
+          <input id="hourly-rate" type="number" min="0" step="0.01" value="20" required>
+        </label>
+        <label>Hours
+          <input id="hours" type="number" min="0" step="0.25" value="1.5" required>
+        </label>
+        <button class="primary-button" type="submit">Calculate cost</button>
+        <p id="cost-result" class="result" role="status">Estimated total: $30.00</p>
+      </form>
+    </section>
+
+    <section class="section" id="matcher">
+      <div class="section-heading">
+        <div><p class="eyebrow">MADE FOR YOU</p><h2>Find my match</h2></div>
+        <p>Set your preferences and discover skills that fit your needs.</p>
+      </div>
+      <form id="match-form" class="tool-panel">
+        <label>Preferred category
+          <select id="match-category">
+            <option>All</option><option>Programming</option><option>Music</option><option>Career</option>
+          </select>
+        </label>
+        <label>Maximum price per hour ($)
+          <input id="max-price" type="number" min="0" step="0.01" value="20" required>
+        </label>
+        <button class="primary-button" type="submit">Find my match</button>
+      </form>
+      <div id="match-results" class="skill-grid match-grid" aria-live="polite"></div>
+      <p id="match-message" class="status-message" aria-live="polite"></p>
+    </section>
+
+    <section class="about-section" id="about">
+      <p class="eyebrow">BETTER TOGETHER</p>
+      <h2>Everyone has something to share.</h2>
+      <p>SkillSwap brings learners and teachers together. Explore a new interest, help someone else grow, and make learning a community effort.</p>
+    </section>
+  </main>
+
+  <footer><a class="brand" href="#home">SkillSwap<span>.</span></a><p>Share what you know. Learn what you love.</p></footer>
+</body>
+</html>
