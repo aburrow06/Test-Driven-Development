@@ -68,6 +68,15 @@ describe("matchSkillsToUser", () => {
     )).toEqual([skills[0], skills[3], skills[4]]);
   });
 
+  test("handles an empty category while respecting the maximum price", () => {
+  const result = matchSkillsToUser(
+    { category: "", maxPrice: 15 },
+    skills
+  );
+
+  expect(result.every(skill => skill.price <= 15)).toBe(true);
+});
+
   test("filters out skills above the maximum price", () => {
     expect(matchSkillsToUser(
       { category: "Programming", maxPrice: 20 }, skills
